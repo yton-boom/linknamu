@@ -1,26 +1,33 @@
+@import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f9fc;
+  --foreground: #2e2c33;
+  /* 프로필 사진의 차콜·하늘색에 맞춘 안개빛 → 연한 하늘색 */
+  --bg-gradient: linear-gradient(165deg, #fafbfd 0%, #eef2f8 50%, #e1eaf6 100%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1f1e24;
+    --foreground: #eceef3;
+    --bg-gradient: linear-gradient(165deg, #1f1e24 0%, #26252c 55%, #2e2c33 100%);
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  word-break: keep-all;
 }
