@@ -2,10 +2,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f9fc;
+  --background: #eef4fb;
   --foreground: #2e2c33;
-  /* 프로필 사진의 차콜·하늘색에 맞춘 안개빛 → 연한 하늘색 */
-  --bg-gradient: linear-gradient(165deg, #fafbfd 0%, #eef2f8 50%, #e1eaf6 100%);
+  /* 프로필 사진의 차콜·하늘색에 맞춘 하늘색 → 연보라 → 연파랑 */
+  --bg-gradient: linear-gradient(165deg, #e3f1fc 0%, #ebe8fa 50%, #dce8fb 100%);
 }
 
 @theme inline {
