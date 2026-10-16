@@ -1,5 +1,6 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import ProfileHeader from "@/components/ProfileHeader";
+import { links } from "@/lib/links";
 
 // 보여 주기용 더미 데이터 — 실제 내용으로 교체 예정
 const profile = {
@@ -7,13 +8,6 @@ const profile = {
   bio: "온라인 MD : 경제적 자유를 꿈꿔요",
   imageSrc: "/new_profile.jpg",
 };
-
-const links = [
-  { title: "이메일", url: "mailto:kyt3959@naver.com", emoji: "📧" },
-  { title: "인스타그램", url: "https://www.instagram.com/iamtag.k/", emoji: "📸" },
-  { title: "블로그", url: "https://blog.naver.com/kyt3959", emoji: "✍️" },
-  { title: "깃허브", url: "https://github.com/yton-boom", emoji: "👍" },
-];
 
 export default function Home() {
   return (
@@ -25,13 +19,7 @@ export default function Home() {
         <div className="absolute -right-16 bottom-10 h-72 w-72 rounded-full bg-blue-100/50 blur-3xl dark:bg-blue-900/15" />
       </div>
       <ProfileHeader {...profile} />
-      <ul className="mt-12 flex flex-col gap-4">
-        {links.map((link) => (
-          <li key={link.title}>
-            <LinkCard {...link} />
-          </li>
-        ))}
-      </ul>
+      <LinkList links={links} />
     </main>
   );
 }
